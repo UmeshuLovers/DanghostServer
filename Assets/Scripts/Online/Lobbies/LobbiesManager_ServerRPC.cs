@@ -126,6 +126,7 @@ public partial class LobbiesManager
         }
     }
 
+#if UNITY_EDITOR
     public static void RequestLobbiesFetch()
     {
         if (!instance) return;
@@ -138,4 +139,5 @@ public partial class LobbiesManager
 
     [ClientRpc]
     private void ReceiveLobbies_ClientRPC(LobbiesCollection lobbies) => this.serverLobbies = lobbies;
+#endif
 }
